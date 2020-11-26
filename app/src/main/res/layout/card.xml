@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="15dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+
+            android:background="@drawable/buttonshape"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="86dp"
+                    android:layout_height="87dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="29dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <LinearLayout
+                    android:layout_width="166dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text=" Campaign Title"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/descrpt"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="left"
+                        android:text="This brand isbdhvciojediofcjeidvhcukfdahvifhdaivheavjodverbtrnbrtgnbtygntnrggnbrtgbhrtnbrgnrgtycoedjvirhevc"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/cat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:text="Category"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="87dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/apply"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginRight="5dp"
+                        android:bottomLeftRadius="30dp"
+                        android:bottomRightRadius="30dp"
+                        android:text="Apply"
+                        android:textColor="#3f3f3f"
+                        android:textColorHint="#FFFFFF"
+                        android:textSize="10sp"
+                        android:topLeftRadius="30dp"
+                        android:topRightRadius="30dp" />
+
+                    <Button
+                        android:id="@+id/knw"
+                        style="@style/Widget.AppCompat.Button.Colored"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="-6dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="0dp"
+                        android:bottomLeftRadius="30dp"
+                        android:bottomRightRadius="30dp"
+                        android:text="Know More"
+                        android:textColor="#3F3F3F"
+                        android:textColorHint="#FFFFFF"
+                        android:textSize="10sp"
+                        android:topLeftRadius="30dp"
+                        android:topRightRadius="10dp" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:text="Apply by 15-12-20"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
