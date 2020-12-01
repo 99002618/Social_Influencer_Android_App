@@ -11,6 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -50,6 +55,15 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
         Button happly=holder.apply;
         Button hknwMore=holder.knwMore;
         ImageView himage=holder.image;
+        CardView cam_card=holder.card;
+        cam_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                Fragment campaign=new campaign();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame, campaign).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack("Campagin ID").commit();
+            }
+        });
         htitle.setText(cTitle.get(position));
         hdescription.setText(cDescription.get(position));
         hcat.setText(cCategory.get(position));
@@ -73,6 +87,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
         Button apply;
         Button knwMore;
         ImageView image;
+        CardView card;
 
         public MyViewHolder(View v) {
             super(v);
@@ -83,6 +98,9 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
             apply=(Button) v.findViewById(R.id.apply);
             knwMore=(Button) v.findViewById(R.id.knw);
             image=(ImageView)v.findViewById(R.id.image);
+            card=(CardView)v.findViewById(R.id.card);
+
         }
     }
+
 }
