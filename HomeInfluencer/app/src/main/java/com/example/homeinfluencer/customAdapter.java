@@ -45,7 +45,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
         MyViewHolder vh= new MyViewHolder(v);
         return vh;
     }
-
+//
     @Override
     public void onBindViewHolder(@NonNull customAdapter.MyViewHolder holder, int position) {
         TextView htitle=holder.title;
@@ -54,6 +54,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
         TextView hdate=holder.date;
         Button happly=holder.apply;
         Button hknwMore=holder.knwMore;
+
         ImageView himage=holder.image;
         CardView cam_card=holder.card;
         cam_card.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +65,8 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame, campaign).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack("Campagin ID").commit();
             }
         });
+
+        
         htitle.setText(cTitle.get(position));
         hdescription.setText(cDescription.get(position));
         hcat.setText(cCategory.get(position));
