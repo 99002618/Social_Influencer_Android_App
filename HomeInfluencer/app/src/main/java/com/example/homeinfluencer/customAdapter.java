@@ -65,7 +65,14 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame, campaign).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack("Campagin ID").commit();
             }
         });
-
+        hknwMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                Fragment campaign=new campaign();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame, campaign).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack("Campagin ID").commit();
+            }
+        });
         
         htitle.setText(cTitle.get(position));
         hdescription.setText(cDescription.get(position));
