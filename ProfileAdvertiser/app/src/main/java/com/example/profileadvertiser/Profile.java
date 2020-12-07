@@ -23,7 +23,7 @@ import java.util.Arrays;
  * create an instance of this fragment.
  */
 public class Profile extends Fragment {
-    ArrayList<String> title= new ArrayList<>(Arrays.asList("WoodEssence","Good Looks","Homemakers Furniture","WoodBling","Heavenly Clothes"));
+    ArrayList<String> title= new ArrayList<>(Arrays.asList("WoodEssence","Good Looks","Homemakers","WoodBling","Heavenly Clothes"));
     ArrayList<String> description= new ArrayList<>(Arrays.asList("Shop the luxury furniture you need","Fashion friendly clothes for fashion enthusiasts",
             "\n" +
             "Decorate your home with Furniture ","Crafted with excellence","We provide clothes more than just stitched fabric"));
