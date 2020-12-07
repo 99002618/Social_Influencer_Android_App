@@ -2,11 +2,25 @@ package com.example.homeinfluencer;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +67,53 @@ public class campaign extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Bundle bundle = this.getArguments();
+        String CamID = bundle.getString("CampaignID", "No-Campaign");
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Campaigns").child(CamID);
+        final TextView CampName = view.findViewById(R.id.Camptitle);
+        final TextView CampDes=view.findViewById(R.id.CampDescription);
+        final TextView CampBudget=view.findViewById(R.id.Campbudget);
+        final TextView CampAdvertiser=view.findViewById(R.id.CampAdvertiser);
+        final TextView CampCat=view.findViewById(R.id.CampCategory);
+        final TextView CampStartDate=view.findViewById(R.id.CampStartDate);
+        final TextView CampEndDate=view.findViewById(R.id.CampEndDate);
+        final TextView CampDaysRemaining=view.findViewById(R.id.DaysLeft);
+        final ImageView img=view.findViewById(R.id.CampImg);
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Campaign_Details scd=snapshot.getValue(Campaign_Details.class);
+                CampName.setText(scd.getCampaign_Name());
+                CampDes.setText(scd.getDescripton());
+                CampAdvertiser.setText(scd.getAdvertiser_Name());
+                String budget_C=String.valueOf(scd.getBudget());
+                CampBudget.setText(budget_C);
+                CampDaysRemaining.setText("5");
+                CampEndDate.setText(scd.getEnd_Date());
+                CampStartDate.setText(scd.getStart_Date());
+                List<String> Cat=scd.getCategories();
+                CampCat.setText(Cat.get(0));
+                Glide.with(getContext())
+                        .load(scd.getCampaign_image())
+                        .into(img);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
     }
 
     @Override

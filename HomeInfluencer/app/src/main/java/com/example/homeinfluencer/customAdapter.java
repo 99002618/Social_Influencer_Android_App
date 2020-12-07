@@ -2,6 +2,7 @@ package com.example.homeinfluencer;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHolder>{
 
@@ -28,15 +33,24 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
     ArrayList<String> cDate;
     Integer[] arr;
     Context context;
+    List<String> CampaignID;
 
-    public customAdapter(ArrayList<String> cTitle, ArrayList<String> cDescription, ArrayList<String> cCategory, ArrayList<String> cDate, Integer[] arr, Context context) {
-        this.cTitle = cTitle;
-        this.cDescription = cDescription;
-        this.cCategory = cCategory;
-        this.cDate = cDate;
-        this.arr = arr;
-        this.context = context;
+    private List<Campaign_Details> details;
+
+    public customAdapter(List<Campaign_Details> details,List<String> CampaignID,Context ctx) {
+        this.details = details;
+        this.CampaignID=CampaignID;
+        this.context=ctx;
     }
+
+//    public customAdapter(ArrayList<String> cTitle, ArrayList<String> cDescription, ArrayList<String> cCategory, ArrayList<String> cDate, Integer[] arr, Context context) {
+//        this.cTitle = cTitle;
+//        this.cDescription = cDescription;
+//        this.cCategory = cCategory;
+//        this.cDate = cDate;
+//        this.arr = arr;
+//        this.context = context;
+//    }
 
     @NonNull
     @Override
@@ -47,7 +61,8 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
     }
 //
     @Override
-    public void onBindViewHolder(@NonNull customAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull customAdapter.MyViewHolder holder, final int position) {
+        Campaign_Details cd=details.get(position);
         TextView htitle=holder.title;
         TextView hdescription=holder.description;
         TextView hcat=holder.cat;
@@ -62,6 +77,9 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
             public void onClick(View v) {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
                 Fragment campaign=new campaign();
+                Bundle bundle = new Bundle();
+                bundle.putString("CampaignID", CampaignID.get(position));
+                campaign.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame, campaign).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack("Campagin ID").commit();
             }
         });
@@ -70,22 +88,26 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
             public void onClick(View v) {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
                 Fragment campaign=new campaign();
+                Bundle bundle = new Bundle();
+                bundle.putString("CampaignID", CampaignID.get(position));
+                campaign.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame, campaign).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack("Campagin ID").commit();
             }
         });
         
-        htitle.setText(cTitle.get(position));
-        hdescription.setText(cDescription.get(position));
-        hcat.setText(cCategory.get(position));
-        hdate.setText("Apply by "+cDate.get(position));
-        himage.setImageResource(arr[position]);
-       //button on click
-        //card on click
+        htitle.setText(cd.getCampaign_Name());
+        hdescription.setText(cd.getDescripton());
+        List<String> Cat=cd.getCategories();
+       hcat.setText(Cat.get(0));
+        hdate.setText("Apply by "+cd.getEnd_Date());
+        Glide.with(context)
+                .load(cd.getCampaign_image())
+                .into(holder.image);
     }
 
     @Override
     public int getItemCount() {
-        return cTitle.size();
+        return details.size();
         
     }
 
@@ -112,5 +134,6 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
 
         }
     }
+
 
 }
