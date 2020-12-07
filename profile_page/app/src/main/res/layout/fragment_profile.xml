@@ -14,6 +14,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#1d2b4e"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,140 +25,145 @@
 
             <TextView
                 android:id="@+id/name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 android:layout_width="78dp"
                 android:layout_height="21dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="148dp"
                 android:layout_marginRight="148dp"
-                android:text="Name"
-                android:textColor="#BAB8B8"
-                android:textSize="15sp" />
+                android:text="Name:"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/gender"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name"
-                tools:text="Gender"
                 android:layout_width="78dp"
                 android:layout_height="21dp"
                 android:layout_marginTop="11dp"
                 android:layout_marginEnd="150dp"
                 android:layout_marginRight="150dp"
                 android:text="Gender"
-                android:textColor="#BAB8B8" />
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                tools:text="Gender:" />
 
             <TextView
                 android:id="@+id/category"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gender"
-                tools:text="Category"
                 android:layout_width="78dp"
                 android:layout_height="21dp"
                 android:layout_marginTop="11dp"
                 android:layout_marginEnd="150dp"
                 android:layout_marginRight="150dp"
-                android:text="Category"
-                android:textColor="#BAB8B8" />
+                android:text="Category:"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gender"
+                tools:text="Category" />
 
             <TextView
                 android:id="@+id/price"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/category"
                 android:layout_width="78dp"
                 android:layout_height="21dp"
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="150dp"
                 android:layout_marginRight="150dp"
-                android:text="Price"
-                android:textColor="#BAB8B8" />
+                android:text="Price:"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/category" />
 
 
             <TextView
                 android:id="@+id/earning"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/price"
                 android:layout_width="88dp"
                 android:layout_height="27dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="140dp"
                 android:layout_marginRight="140dp"
-                android:text="Earning"
-                android:textColor="#BAB8B8" />
+                android:text="Earning:"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price" />
 
             <TextView
                 android:id="@+id/u_name"
-                app:layout_constraintBaseline_toBaselineOf="@+id/name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.688"
-                app:layout_constraintStart_toEndOf="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"
                 android:text="Name"
-                android:textColor="#FFFEFE" />
+                android:textColor="#FFFFFF"
+                app:layout_constraintBaseline_toBaselineOf="@+id/name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.688"
+                app:layout_constraintStart_toEndOf="@+id/name" />
 
             <TextView
                 android:id="@+id/u_gender"
-                app:layout_constraintBaseline_toBaselineOf="@+id/gender"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.586"
-                app:layout_constraintStart_toEndOf="@+id/gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
                 android:text="Gender"
-                android:textColor="#FFFEFE" />
+                android:textColor="#FFFFFF"
+                app:layout_constraintBaseline_toBaselineOf="@+id/gender"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.586"
+                app:layout_constraintStart_toEndOf="@+id/gender" />
 
             <TextView
                 android:id="@+id/u_category"
-                app:layout_constraintBaseline_toBaselineOf="@+id/category"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.698"
-                app:layout_constraintStart_toEndOf="@+id/category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
                 android:text="Category"
-                android:textColor="#FFFEFE" />
+                android:textColor="#FFFFFF"
+                app:layout_constraintBaseline_toBaselineOf="@+id/category"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.698"
+                app:layout_constraintStart_toEndOf="@+id/category" />
 
             <TextView
                 android:id="@+id/u_price"
-                app:layout_constraintBaseline_toBaselineOf="@+id/price"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.647"
-                app:layout_constraintStart_toEndOf="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"
                 android:text="Price"
-                android:textColor="#FFFEFE" />
+                android:textColor="#FFFFFF"
+                app:layout_constraintBaseline_toBaselineOf="@+id/price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.647"
+                app:layout_constraintStart_toEndOf="@+id/price" />
 
             <TextView
                 android:id="@+id/u_totalearning"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="56dp"
                 android:layout_marginRight="56dp"
                 android:layout_marginBottom="32dp"
                 android:text="Earning"
-                android:textColor="#FFFEFE" />
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:cardCornerRadius="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/category"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -175,7 +181,8 @@
             android:id="@+id/insta_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -184,7 +191,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/teal_200"
+                    android:background="#8000BCD4"
                     android:orientation="vertical"
                     android:paddingLeft="5dp"
                     android:paddingTop="5dp"
@@ -353,7 +360,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="?attr/colorSecondaryVariant"
+                    android:background="#8000BCD4"
                     android:orientation="vertical"
                     android:paddingLeft="5dp"
                     android:paddingTop="5dp"
@@ -524,17 +531,17 @@
             android:layout_marginTop="10dp">
 
             <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_green_dark"
+                    android:background="#8000BCD4"
                     android:orientation="vertical"
                     android:paddingLeft="5dp"
                     android:paddingTop="5dp"
@@ -696,8 +703,9 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:background="#1d2b4e"
             android:text="Campaing History"
-            android:textColor="#272727"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -705,7 +713,8 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp" />
+            android:layout_marginBottom="50dp"
+            android:background="#1d2b4e" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

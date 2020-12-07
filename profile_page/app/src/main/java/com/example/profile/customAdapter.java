@@ -79,7 +79,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
         htitle.setText(cTitle.get(position));
         hdescription.setText(cDescription.get(position));
         hcat.setText(cCategory.get(position));
-        hdate.setText("Apply by "+cDate.get(position));
+
         himage.setImageResource(arr[position]);
         //button on click
         //card on click
@@ -106,7 +106,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
             title=(TextView) v.findViewById(R.id.title);
             description=(TextView) v.findViewById(R.id.descrpt);
             cat=(TextView) v.findViewById(R.id.cat);
-            date=(TextView) v.findViewById(R.id.date);
+
 
             knwMore=(Button) v.findViewById(R.id.knw);
             image=(ImageView)v.findViewById(R.id.image);
