@@ -10,15 +10,22 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,14 +33,16 @@ import java.util.Arrays;
  * create an instance of this fragment.
  */
 public class Home extends Fragment {
+    private List<Campaign_Details> listData;
+    private List<String> CampID;
 
-    ArrayList<String> title= new ArrayList<>(Arrays.asList("WoodEssence","Good Looks","Canine Crew","Peak Sports","Dream Shades","Creative Tree","Fur Life","Homemakers Furniture","Magic Drop","Sports Zone","Magic Brush","WoodBling","Team Sweep","Heavenly Clothes"));
-    ArrayList<String> description= new ArrayList<>(Arrays.asList("Shop the luxury furniture you need","Fashion friendly clothes for fashion enthusiasts","For wagging tails and more","When you feel down and out choose to play a sport","Beauty is Whatever Brings Perfect","Adding Creativity Through Brush \n" +
-            "\n" +
-            "A Store that is full of Surprise Fur beings","Decorate your home with Furniture ","Bringing Joy Of Creativity"," Talk with your feet, play with your heart","Adding Beauty Through Brush","Crafted with excellence","Sports are great at relieving stress!","Sports are great at relieving stress!","We provide clothes more than just stitched fabric"));
-    ArrayList<String> category= new ArrayList<>(Arrays.asList("Furniture","Clothing","Pets","Sports","Cosmetics","Arts","Pets","Furniture","Arts","Sports","Cosmetics","Furniture","Sports","Clothing"));
-    ArrayList<String> endDate= new ArrayList<>(Arrays.asList("20-12-20","16-12-20","18-12-20","20-12-20","15-12-20","28-12-20","1-12-20","8-12-20","10-12-20","12-12-20","17-12-20","23-12-20","17-12-20","23-12-20"));
-    Integer[] ar={R.drawable.fur1,R.drawable.cloth4,R.drawable.pet1,R.drawable.sport3,R.drawable.cos3,R.drawable.art1,R.drawable.pet2,R.drawable.fur4,R.drawable.art3,R.drawable.sport1,R.drawable.cos2,R.drawable.fur3,R.drawable.sport2,R.drawable.cloth2};
+//    ArrayList<String> title= new ArrayList<>(Arrays.asList("WoodEssence","Good Looks","Canine Crew","Peak Sports","Dream Shades","Creative Tree","Fur Life","Homemakers Furniture","Magic Drop","Sports Zone","Magic Brush","WoodBling","Team Sweep","Heavenly Clothes"));
+//    ArrayList<String> description= new ArrayList<>(Arrays.asList("Shop the luxury furniture you need","Fashion friendly clothes for fashion enthusiasts","For wagging tails and more","When you feel down and out choose to play a sport","Beauty is Whatever Brings Perfect","Adding Creativity Through Brush \n" +
+//            "\n" +
+//            "A Store that is full of Surprise Fur beings","Decorate your home with Furniture ","Bringing Joy Of Creativity"," Talk with your feet, play with your heart","Adding Beauty Through Brush","Crafted with excellence","Sports are great at relieving stress!","Sports are great at relieving stress!","We provide clothes more than just stitched fabric"));
+//    ArrayList<String> category= new ArrayList<>(Arrays.asList("Furniture","Clothing","Pets","Sports","Cosmetics","Arts","Pets","Furniture","Arts","Sports","Cosmetics","Furniture","Sports","Clothing"));
+//    ArrayList<String> endDate= new ArrayList<>(Arrays.asList("20-12-20","16-12-20","18-12-20","20-12-20","15-12-20","28-12-20","1-12-20","8-12-20","10-12-20","12-12-20","17-12-20","23-12-20","17-12-20","23-12-20"));
+//    Integer[] ar={R.drawable.fur1,R.drawable.cloth4,R.drawable.pet1,R.drawable.sport3,R.drawable.cos3,R.drawable.art1,R.drawable.pet2,R.drawable.fur4,R.drawable.art3,R.drawable.sport1,R.drawable.cos2,R.drawable.fur3,R.drawable.sport2,R.drawable.cloth2};
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -45,19 +54,45 @@ public class Home extends Fragment {
 
     public Home() {
         // Required empty public constructor
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView campaignList=view.findViewById(R.id.recyclerView);
+        final RecyclerView campaignList=view.findViewById(R.id.recyclerView);
 
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager((getContext()));
         linearLayoutManager.setAutoMeasureEnabled(true);
         campaignList.setLayoutManager(linearLayoutManager);
         campaignList.setNestedScrollingEnabled(false);
-        customAdapter customeAdapter =new customAdapter(title,description,category,endDate,ar,getContext());
-        campaignList.setAdapter(customeAdapter);
+        listData=new ArrayList<>();
+        CampID=new ArrayList<>();
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Campaigns");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot datas: dataSnapshot.getChildren()){
+                    CampID.add(datas.getKey());
+                    Campaign_Details scd=datas.getValue(Campaign_Details.class);
+//                    Log.d("/outputAdd",scd.getAdvertiserID());
+                    listData.add(scd);
+                    //get other items
+                    customAdapter customeAdapter =new customAdapter(listData,CampID,getContext());
+                    campaignList.setAdapter(customeAdapter);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+//        customAdapter customeAdapter =new customAdapter(title,description,category,endDate,ar,getContext());
+//        campaignList.setAdapter(customeAdapter);
     }
 
     /**
