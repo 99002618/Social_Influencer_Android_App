@@ -28,7 +28,7 @@ public class Profile extends Fragment {
             "\n" +
             "Decorate your home with Furniture ","Crafted with excellence","We provide clothes more than just stitched fabric"));
     ArrayList<String> category= new ArrayList<>(Arrays.asList("Furniture","Clothing","Furniture","Furniture","Clothing"));
-    ArrayList<String> endDate= new ArrayList<>(Arrays.asList("Running","Past","Running","Past","Coming soon"));
+    ArrayList<String> endDate= new ArrayList<>(Arrays.asList("Running","Past","Running","Past","Running"));
     Integer[] ar={R.drawable.fur1,R.drawable.cloth4,R.drawable.fur4,R.drawable.fur3,R.drawable.cloth2};
 
 
