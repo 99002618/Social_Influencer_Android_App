@@ -7,16 +7,16 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginLeft="8dp"
-    android:layout_marginTop="2dp"
-    android:layout_marginBottom="2dp"
-    android:background="#FFFFFF"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:background="@color/purple_700"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#455A64"
+        android:background="@drawable/buttonshape"
         app:cardCornerRadius="8dp"
         app:cardElevation="3dp">
 
@@ -92,8 +92,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="0dp"
-                        android:layout_marginBottom="0dp"
+                        android:layout_marginEnd="4dp"
 
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="0dp"
                         android:bottomLeftRadius="30dp"
                         android:bottomRightRadius="30dp"
                         android:gravity="center"

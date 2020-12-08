@@ -15,6 +15,7 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="8dp"
         app:cardElevation="3dp">
 
@@ -106,7 +107,7 @@
                         android:textSize="10sp"
                         android:topLeftRadius="30dp"
                         android:topRightRadius="10dp"
-                        app:backgroundTint="@color/purple_700" />
+                        app:backgroundTint="#1d2b4e" />
 
 
                     <TextView
