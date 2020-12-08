@@ -5,20 +5,24 @@
     layout_height="math"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff">
+    android:background="#EDE7F6">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="#1d2b4e"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="148dp"
-            android:layout_margin="5dp"
-            android:background="#8BC34A"
+            android:layout_height="200dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#E0F7FA"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -62,7 +66,7 @@
                 android:layout_width="263dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#8BC34A"
+                android:background="#E0F7FA"
                 android:orientation="vertical">
 
                 <TextView
@@ -136,8 +140,8 @@
             android:layout_width="match_parent"
             android:layout_height="157dp"
             android:layout_margin="5dp"
-            android:layout_marginTop="20dp"
-            android:background="#8B00BCD4"
+            android:layout_marginTop="0dp"
+            android:background="#E0F7FA"
             android:orientation="vertical">
 
             <TextView
@@ -146,14 +150,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:text="Description"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:text="TextView"
+                android:text="An advertiser is the entity on the buying side of the mobile marketing ecosystem. In the context of mobile advertising, the advertiser is often an app or brand looking to spread a specific message about their product (for example, new user acquisition and retargeting campaigns).  "
                 android:textColor="#000000" />
         </LinearLayout>
 
@@ -171,7 +176,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
                 android:text="Campaing History"
-                android:textColor="#272727"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -179,7 +184,9 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp" />
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="60dp" />
         </LinearLayout>
 
     </LinearLayout>

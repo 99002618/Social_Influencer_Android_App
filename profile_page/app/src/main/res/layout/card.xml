@@ -9,6 +9,7 @@
     android:layout_marginLeft="8dp"
     android:layout_marginTop="2dp"
     android:layout_marginBottom="2dp"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -85,25 +86,23 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
+
                     <Button
                         android:id="@+id/knw"
-                        style="@style/Widget.AppCompat.Button.Colored"
-
-                        android:layout_width="80dp"
-                        android:layout_height="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:background="#1d2b4e"
+
                         android:bottomLeftRadius="30dp"
                         android:bottomRightRadius="30dp"
                         android:gravity="center"
                         android:text="Know More"
-                        android:textColor="#FCFCFC"
-                        android:textColorHint="#FFFFFF"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         android:topLeftRadius="30dp"
-                        android:topRightRadius="10dp" />
-
+                        android:topRightRadius="10dp"
+                        app:backgroundTint="@color/purple_700" />
 
                     <TextView
                         android:id="@+id/textView3"
