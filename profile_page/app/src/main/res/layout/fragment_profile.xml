@@ -178,7 +178,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
-            android:id="@+id/insta_card"
+            android:id="@+id/insta_cardd"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -186,7 +186,8 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -199,7 +200,7 @@
                     android:paddingBottom="5dp">
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/textView11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -216,7 +217,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView8"
+                            android:id="@+id/imageView9"
                             android:layout_width="40dp"
                             android:layout_height="60dp"
 
@@ -355,7 +356,8 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -406,7 +408,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/Following"
+                                android:id="@+id/yfollowing"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -415,7 +417,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/Following_number"
+                                android:id="@+id/followingNumber"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginBottom="20dp"
@@ -433,7 +435,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/Followers"
+                                android:id="@+id/Followerss"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -442,7 +444,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/Follower_number"
+                                android:id="@+id/Follower_numberr"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
@@ -461,7 +463,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/Posts"
+                                android:id="@+id/posts"
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -471,7 +473,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/Posts_Number"
+                                android:id="@+id/posts_Number"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
@@ -490,7 +492,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/Engagement"
+                                android:id="@+id/engagement"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -499,7 +501,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/Engagement_percent"
+                                android:id="@+id/engagement_percent"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
@@ -525,7 +527,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
-            android:id="@+id/insta_card"
+            android:id="@+id/Insta_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp">
@@ -549,7 +551,7 @@
                     android:paddingBottom="5dp">
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/textview10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -566,7 +568,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView8"
+                            android:id="@+id/imageview8"
                             android:layout_width="40dp"
                             android:layout_height="60dp"
 
@@ -584,7 +586,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/Following"
+                                android:id="@+id/following"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -593,7 +595,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/Following_number"
+                                android:id="@+id/following_number"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginBottom="20dp"
@@ -611,7 +613,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/Followers"
+                                android:id="@+id/followers"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -620,7 +622,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/Follower_number"
+                                android:id="@+id/follower_number"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
@@ -639,7 +641,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/Posts"
+                                android:id="@+id/Postss"
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -649,7 +651,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/Posts_Number"
+                                android:id="@+id/PostsNumber"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
@@ -668,7 +670,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/Engagement"
+                                android:id="@+id/EngagemenT"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -677,7 +679,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/Engagement_percent"
+                                android:id="@+id/Engagementpercent"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
 
@@ -713,7 +715,7 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="65dp"
             android:background="#1d2b4e" />
 
     </LinearLayout>

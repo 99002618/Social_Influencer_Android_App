@@ -21,13 +21,11 @@ import java.util.Arrays;
  * create an instance of this fragment.
  */
 public class Profile extends Fragment {
-    ArrayList<String> title= new ArrayList<>(Arrays.asList("WoodEssence","Good Looks","Canine Crew","Peak Sports","Dream Shades","Creative Tree","Fur Life","Homemakers Furniture","Magic Drop","Sports Zone","Magic Brush","WoodBling","Team Sweep","Heavenly Clothes"));
-    ArrayList<String> description= new ArrayList<>(Arrays.asList("Shop the luxury furniture you need","Fashion friendly clothes for fashion enthusiasts","For wagging tails and more","When you feel down and out choose to play a sport","Beauty is Whatever Brings Perfect","Adding Creativity Through Brush \n" +
-            "\n" +
-            "A Store that is full of Surprise Fur beings","Decorate your home with Furniture ","Bringing Joy Of Creativity"," Talk with your feet, play with your heart","Adding Beauty Through Brush","Crafted with excellence","Sports are great at relieving stress!","Sports are great at relieving stress!","We provide clothes more than just stitched fabric"));
-    ArrayList<String> category= new ArrayList<>(Arrays.asList("Furniture","Clothing","Pets","Sports","Cosmetics","Arts","Pets","Furniture","Arts","Sports","Cosmetics","Furniture","Sports","Clothing"));
-    ArrayList<String> endDate= new ArrayList<>(Arrays.asList("20-12-20","16-12-20","18-12-20","20-12-20","15-12-20","28-12-20","1-12-20","8-12-20","10-12-20","12-12-20","17-12-20","23-12-20","17-12-20","23-12-20"));
-    Integer[] ar={R.drawable.fur1,R.drawable.cloth4,R.drawable.pet1,R.drawable.sport3,R.drawable.cos3,R.drawable.art1,R.drawable.pet2,R.drawable.fur4,R.drawable.art3,R.drawable.sport1,R.drawable.cos2,R.drawable.fur3,R.drawable.sport2,R.drawable.cloth2};
+    ArrayList<String> title= new ArrayList<>(Arrays.asList("WoodEssence","Good Looks","Canine Crew","Peak Sports","Dream Shades","Creative Tree"));
+    ArrayList<String> description= new ArrayList<>(Arrays.asList("Shop the luxury furniture you need","Fashion friendly clothes for fashion enthusiasts","For wagging tails and more","When you feel down and out choose to play a sport","Beauty is Whatever Brings Perfect","Adding Creativity Through Brush"));
+    ArrayList<String> category= new ArrayList<>(Arrays.asList("Furniture","Clothing","Pets","Sports","Cosmetics","Arts"));
+    ArrayList<String> endDate= new ArrayList<>(Arrays.asList("20-12-20","16-12-20","18-12-20","20-12-20","15-12-20","28-12-20"));
+    Integer[] ar={R.drawable.fur1,R.drawable.cloth4,R.drawable.pet1,R.drawable.sport3,R.drawable.cos3,R.drawable.art1};
 
 
     // TODO: Rename parameter arguments, choose names that match
