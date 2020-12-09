@@ -27,15 +27,15 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
     ArrayList<String> cTitle;
     ArrayList<String> cDescription;
     ArrayList<String> cCategory;
-    ArrayList<String> cDate;
+    ArrayList<String> cStatus;
     Integer[] arr;
     Context context;
 
-    public customAdapter(ArrayList<String> cTitle, ArrayList<String> cDescription, ArrayList<String> cCategory, ArrayList<String> cDate, Integer[] arr, Context context) {
+    public customAdapter(ArrayList<String> cTitle, ArrayList<String> cDescription, ArrayList<String> cCategory, ArrayList<String> cStatus, Integer[] arr, Context context) {
         this.cTitle = cTitle;
         this.cDescription = cDescription;
         this.cCategory = cCategory;
-        this.cDate = cDate;
+        this.cStatus = cStatus;
         this.arr = arr;
         this.context = context;
     }
@@ -53,7 +53,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
         TextView htitle=holder.title;
         TextView hdescription=holder.description;
         TextView hcat=holder.cat;
-        TextView hdate=holder.date;
+        TextView hdate=holder.sts;
 
         Button hknwMore=holder.knwMore;
 
@@ -79,6 +79,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
         htitle.setText(cTitle.get(position));
         hdescription.setText(cDescription.get(position));
         hcat.setText(cCategory.get(position));
+        hdate.setText(cStatus.get(position));
 
         himage.setImageResource(arr[position]);
         //button on click
@@ -95,7 +96,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
         TextView title;
         TextView description;
         TextView cat;
-        TextView date;
+        TextView sts;
         Button apply;
         Button knwMore;
         ImageView image;
@@ -106,7 +107,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
             title=(TextView) v.findViewById(R.id.title);
             description=(TextView) v.findViewById(R.id.descrpt);
             cat=(TextView) v.findViewById(R.id.cat);
-
+            sts=(TextView) v.findViewById(R.id.status);
 
             knwMore=(Button) v.findViewById(R.id.knw);
             image=(ImageView)v.findViewById(R.id.image);
