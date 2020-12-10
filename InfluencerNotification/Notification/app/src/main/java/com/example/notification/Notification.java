@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * *hii
  * A simple {@link Fragment} subclass.
  * Use the {@link Notification#newInstance} factory method to
  * create an instance of this fragment.
@@ -27,17 +28,6 @@ public class Notification extends Fragment {
     ArrayList<String> Price= new ArrayList<>(Arrays.asList("44331","43422","55444","33793","27949","72223"));
     ArrayList<String> Time= new ArrayList<>(Arrays.asList("9","7","3","4","10","15"));
 
-<<<<<<< HEAD:Notification/app/src/main/java/com/example/notification/Notification.java
-=======
-    ArrayList<String> iname= new ArrayList<>(Arrays.asList("Rosy","Ram","John","Johnny","Jimmy","Clay","Bob","Ankitha","Girish","Sudarshana","Chethan","Thrinath"));
-    ArrayList<String> iprice= new ArrayList<>(Arrays.asList("20000","30000","34000","20000","10000","14000","50000","45000","36000","20600","60000","74000"));
-    ArrayList<String> icat1= new ArrayList<>(Arrays.asList("Furniture","Clothing","Pets","Sports","Cosmetics","Arts","Pets","Furniture","Arts","Sports","Cosmetics","Furniture"));
-    ArrayList<String> icat2= new ArrayList<>(Arrays.asList("Pets","Furniture","Arts","Sports","Cosmetics","Furniture","Furniture","Clothing","Pets","Sports","Cosmetics","Arts"));
-    ArrayList<String> instafollwers= new ArrayList<>(Arrays.asList("1000","1200","3000","4000","3478","2333","2000","2200","2300","2020","4478","2343"));
-    ArrayList<String> youtubesubscribers= new ArrayList<>(Arrays.asList("3331","4322","5544","3373","2799","7222","6000","5200","5000","4050","3458","5333"));
-    ArrayList<String> fbfollowers= new ArrayList<>(Arrays.asList("3231","4322","3544","7373","6799","7622","7800","8200","5080","4030","2458","4353"));
-    Integer[] ar={R.drawable.fur1,R.drawable.cloth4,R.drawable.pet1,R.drawable.sport3,R.drawable.cos3,R.drawable.art1,R.drawable.pet2,R.drawable.fur4,R.drawable.art3,R.drawable.sport1,R.drawable.cos2,R.drawable.fur3};
->>>>>>> ca69c26eeb7dfabc40777c24c29d0854d747f835:ankitha-main/app/src/main/java/com/example/homenotiadvertiser/Home.java
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -54,17 +44,13 @@ public class Notification extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView campaignList=view.findViewById(R.id.recyclerView);
+        RecyclerView campaignList = view.findViewById(R.id.recyclerView);
 
-        LinearLayoutManager linearLayoutManager= new LinearLayoutManager((getContext()));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager((getContext()));
         linearLayoutManager.setAutoMeasureEnabled(true);
         campaignList.setLayoutManager(linearLayoutManager);
         campaignList.setNestedScrollingEnabled(false);
-<<<<<<< HEAD:Notification/app/src/main/java/com/example/notification/Notification.java
         customAdapter customeAdapter =new customAdapter(Name,Brand,Campaign,Price,Time,getContext());
-=======
-        customAdapter customeAdapter =new customAdapter(iname,iprice,icat1,icat2,instafollwers,youtubesubscribers,fbfollowers,ar,getContext());
->>>>>>> ca69c26eeb7dfabc40777c24c29d0854d747f835:ankitha-main/app/src/main/java/com/example/homenotiadvertiser/Home.java
         campaignList.setAdapter(customeAdapter);
     }
 
