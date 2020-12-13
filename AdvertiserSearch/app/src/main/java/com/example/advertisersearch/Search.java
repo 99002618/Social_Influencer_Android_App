@@ -20,7 +20,7 @@ import java.util.Arrays;
  * Use the {@link Search#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Search extends Fragment {
+public class  Search extends Fragment {
 
     ArrayList<String> iname= new ArrayList<>(Arrays.asList("Rosy","Ram","John","Johnny","Jimmy","Clay","Bob","Ankitha","Girish","Sudarshana","Chethan","Thrinath"));
     ArrayList<String> iprice= new ArrayList<>(Arrays.asList("20000","30000","34000","20000","10000","14000","50000","45000","36000","20600","60000","74000"));
