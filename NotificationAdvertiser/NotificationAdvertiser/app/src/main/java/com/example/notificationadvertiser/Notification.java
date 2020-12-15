@@ -14,6 +14,10 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+//import static com.example.notificationadvertiser.ItemClass.card;
+//import static com.example.notificationadvertiser.ItemClass.card1;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +36,10 @@ public class Notification extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    ArrayList<String> namE= new ArrayList<>(Arrays.asList("Campaign Acceptance", "Campaign Acceptance","Campaign Acceptance","Campaign Acceptance","Campaign Acceptance","Campaign Acceptance"));
+    ArrayList<String> influenceR= new ArrayList<>(Arrays.asList("Clay","Ankitha","Girish","Sudarshana","Chethan","Thrinath"));
+    ArrayList<String> campaigN= new ArrayList<>(Arrays.asList("Cannie Crew","Good Looks","Wood Bling","Sports Zone","Creative Tree","Magic Brush"));
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -48,9 +56,28 @@ public class Notification extends Fragment {
         linearLayoutManager.setAutoMeasureEnabled(true);
         campaignList.setLayoutManager(linearLayoutManager);
         campaignList.setNestedScrollingEnabled(false);
-        customAdapter customeAdapter =new customAdapter(name,influencer,campaign,price,time,getContext());
+
+        List<ItemClass> itemClassList = new ArrayList<>();
+
+        //itemClassList.add(new ItemClass(card,"Campaign Acceptance"));
+        //itemClassList.add(new ItemClass(card1, "Campaign Application"));
+        itemClassList.add(new ItemClass(ItemClass.card,name,influencer,campaign,price,time));
+        itemClassList.add(new ItemClass(ItemClass.card1,namE,influenceR,campaigN));
+        itemClassList.add(new ItemClass(ItemClass.card1,namE,influenceR,campaigN));
+        itemClassList.add(new ItemClass(ItemClass.card1,namE,influenceR,campaigN));
+        itemClassList.add(new ItemClass(ItemClass.card,name,influencer,campaign,price,time));
+
+        customAdapter customeAdapter =new customAdapter(itemClassList);
         campaignList.setAdapter(customeAdapter);
+
+        customAdapter adapterClass
+                = new  customAdapter(itemClassList);
+
+//        customAdapter adapter
+//                = new  customAdapter(itemClassList);
+        campaignList.setAdapter(adapterClass);
     }
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.

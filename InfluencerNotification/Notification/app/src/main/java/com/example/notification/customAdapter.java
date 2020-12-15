@@ -15,97 +15,134 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHolder>{
-    ArrayList<String> cName;
-    ArrayList<String> cBrand;
-    ArrayList<String> cCampaign;
-    ArrayList<String> cPrice;
-    ArrayList<String> cTime;
-    Context context;
-    public customAdapter(ArrayList<String> cName, ArrayList<String> cBrand, ArrayList<String> cCampaign, ArrayList<String> cPrice, ArrayList<String> cTime, Context context) {
-        this.cName = cName;
-        this.cBrand= cBrand;
-        this.cCampaign = cCampaign;
-        this.cPrice = cPrice;
-        this.cTime = cTime;
+import static com.example.notification.ItemClass.card;
+import static com.example.notification.ItemClass.card1;
 
-        this.context = context;
+public class customAdapter extends RecyclerView.Adapter {
+    private List<ItemClass> itemClassList;
+    int card1Position=0;
+    int card2Position=0;
+    public customAdapter(List<ItemClass> itemClassList) {
+        this.itemClassList = itemClassList;
     }
 
     @NonNull
     @Override
-    public customAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.card,parent,false);
-        MyViewHolder vh= new MyViewHolder(v);
-        return vh;
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        switch (viewType) {
+            case card:
+                View layoutOne
+                        = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.card, parent,
+                                false);
+                return new cardViewHolder(layoutOne);
+            case card1:
+                View layoutTwo
+                        = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.card1, parent,
+                                false);
+                return new card1ViewHolder(layoutTwo);
+            default:
+                return null;
+        }
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+        switch (itemClassList.get(position).getViewType()) {
+            case card:
+                String aname = itemClassList.get(position).getaName().get(card1Position);
+                String aCampaign = itemClassList.get(position).getaCampaign().get(card1Position);
+                String aInfluencer = itemClassList.get(position).getaInfluencer().get(card1Position);
+                String aPrice = itemClassList.get(position).getaPrice().get(card1Position);
+                String aTime = itemClassList.get(position).getaTime().get(card1Position);
+                ((cardViewHolder)holder).setViews(aname,aCampaign,aInfluencer,aPrice,aTime);
+                card1Position+=1;
+                break;
+            case card1:
+                String bname = itemClassList.get(position).getbName().get(card2Position);
+                String bCampaign = itemClassList.get(position).getbCampaign().get(card2Position);
+                String bInfluencer = itemClassList.get(position).getbInfluencer().get(card2Position);
+                ((card1ViewHolder)holder).setViews(bname,bCampaign,bInfluencer);
+                card2Position+=1;
+                break;
+        }
+
+
     }
 
 
-    @Override
-    public void onBindViewHolder(@NonNull customAdapter.MyViewHolder holder, int position) {
-        TextView hName=holder.Name;
-        TextView hBrand=holder.Brand;
-        TextView hCampaign=holder.Campaign;
-        TextView hPrice=holder.Price;
-        TextView hTime=holder.Time;
-//            Button hAccept=holder.Accept;
-//            Button hReject=holder.Reject;
-        CardView cam_card=holder.card;
-
-        cam_card.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                Fragment campaign=new campaign();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame, campaign).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack("Campagin ID").commit();
-            }
-        });
-
-//            hvp.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
-//                    Fragment campaign=new InfluencerDetails();
-//                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame, campaign).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).addToBackStack("Campagin ID").commit();
-//                }
-//            });
-
-        hName.setText(cName.get(position));
-        hCampaign.setText(cCampaign.get(position));
-        hBrand.setText(cBrand.get(position));
-        hPrice.setText(cPrice.get(position));
-        hTime.setText(cTime.get(position));
+    public int getItemViewType(int position) {
+        switch (itemClassList.get(position).getViewType()) {
+            case 0:
+                return card;
+            case 1:
+                return card1;
+            default:
+                return -1;
+        }
     }
 
     @Override
     public int getItemCount() {
-        return cName.size();
+        return itemClassList.size();
+    }
+
+    class cardViewHolder extends RecyclerView.ViewHolder {
+        TextView name;
+        TextView brand;
+        TextView campaign;
+        TextView price;
+        TextView time;
+        Button accept;
+        Button reject;
+        CardView card;
+
+        public cardViewHolder(@NonNull View v) {
+            super(v);
+            name = (TextView) v.findViewById(R.id.notificationName);
+            brand = (TextView) v.findViewById(R.id.brandName);
+            campaign = (TextView) v.findViewById(R.id.campaignName);
+            price = (TextView) v.findViewById(R.id.price);
+            time = (TextView) v.findViewById(R.id.time);
+            accept = (Button) v.findViewById(R.id.accept);
+            reject = (Button) v.findViewById(R.id.reject);
+            card = (CardView) v.findViewById(R.id.card);
+        }
+
+        private void setViews(String cName, String cInfluencer, String cCampaign, String cPrice, String cTime) {
+            name.setText((CharSequence) cName);
+            brand.setText((CharSequence) cInfluencer);
+            campaign.setText((CharSequence) cCampaign);
+            price.setText((CharSequence) cPrice);
+            time.setText((CharSequence) cTime);
+
+        }
 
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView Name;
-        TextView Brand;
-        TextView Campaign;
-        TextView Price;
-        TextView Time;
-        Button Accept;
-        Button Reject;
-        CardView card;
+    class card1ViewHolder extends RecyclerView.ViewHolder {
+        TextView namE;
+        TextView branD ;
+        TextView campaigN;
+        CardView card1;
 
-        public MyViewHolder(View v) {
+        public card1ViewHolder(@NonNull View v) {
             super(v);
-            Name=(TextView) v.findViewById(R.id.notificationName);
-            Brand=(TextView) v.findViewById(R.id.brandName);
-            Campaign=(TextView) v.findViewById(R.id.campaignName);
-            Price=(TextView) v.findViewById(R.id.price);
-            Time=(TextView) v.findViewById(R.id.time);
-            Accept=(Button) v.findViewById(R.id.accept);
-            Reject=(Button) v.findViewById(R.id.reject);
-            card=(CardView)v.findViewById(R.id.card);
+            namE = (TextView) v.findViewById(R.id.NotificationName);
+            branD = (TextView) v.findViewById(R.id.Brand);
+            campaigN = (TextView) v.findViewById(R.id.CampaignName);
+            card1 = (CardView) v.findViewById(R.id.card);
+        }
 
+        private void setViews(String dName, String dInfluencer, String dCampaign) {
+            namE.setText((CharSequence) dName);
+            branD.setText((CharSequence) dInfluencer);
+            campaigN.setText((CharSequence) dCampaign);
         }
     }
 

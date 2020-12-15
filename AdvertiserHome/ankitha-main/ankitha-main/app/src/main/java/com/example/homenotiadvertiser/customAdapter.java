@@ -30,7 +30,7 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.MyViewHold
         ArrayList<String> cCat2;
         Integer[] arr;
 
-    public customAdapter(ArrayList<String> cname, ArrayList<String> cprice, ArrayList<String> cinstafollowers, ArrayList<String> cyoutubesubscribers, ArrayList<String> cfbfollowers, ArrayList<String> cCat1, ArrayList<String> cCat2, Integer[] arr, Context context) {
+    public customAdapter(ArrayList<String> cname, ArrayList<String> cprice, ArrayList<String> cCat1, ArrayList<String> cCat2,ArrayList<String> cinstafollowers, ArrayList<String> cyoutubesubscribers, ArrayList<String> cfbfollowers, Integer[] arr, Context context) {
         this.cname = cname;
         this.cprice = cprice;
         this.cinstafollowers = cinstafollowers;
